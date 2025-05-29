@@ -7,9 +7,12 @@ import os
 from typing import List
 
 # Add parent directory to Python path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from orchestrator.crew_manager import FinancialCrew
+try:
+    from orchestrator.crew_manager import FinancialCrew
+except ImportError:
+    # Try alternative import path for Streamlit Cloud
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from orchestrator.crew_manager import FinancialCrew
 
 # Initialize voice features if available
 VOICE_ENABLED = False

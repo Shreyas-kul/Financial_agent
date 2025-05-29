@@ -20,3 +20,6 @@ aiohttp>=3.9.3
 # sounddevice>=0.5.2
 # openai-whisper
 # pyttsx3>=2.90
+
+# Install the package itself
+-e .
